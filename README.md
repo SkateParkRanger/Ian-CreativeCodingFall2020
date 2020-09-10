@@ -1,2 +1,1 @@
-# Ian-CreativeCodingFall2020
-CreativeCoding
+This is a project template for Creative Coding STA 491
