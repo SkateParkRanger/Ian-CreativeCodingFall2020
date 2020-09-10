@@ -1,15 +1,20 @@
+let xpos = 0;
+let ypos = 0;
+
+let xpos2 = 100;
+let ypos2=50;
 
 function setup() {
-  // put setup code here
-createCanvas(700,700);
-background(200,10,120);
+  createCanvas(500,500);
 
+  angleMode(DEGREES);
 }
 
 function draw() {
-  fill(30,40,200);
-  circle(20,20,70);
-  fill(200,40,200);
-  rect(400,400,100,50);
+  background (200,0,200);
+  rect (xpos,ypos,50);
+  xpos = xpos +1;
+  ypos = ypos +5;
 
+  circle (xpos2,ypos2,50);
 }
