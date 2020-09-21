@@ -1,15 +1,36 @@
+
 let xpos = 500;
 let ypos = 0;
 let xballspeed = 5;
 let yballspeed = 10;
+let circlecolor= 120;
+
+let circlesize =10;
+
 
 function setup() {
-  createCanvas(windowWidth,windowHeight);  }
+  createCanvas(windowWidth,windowHeight);
+circlesize = random(10,100);
+
+}
 
 function draw() {
 background(100,0,200);
-  fill(200,200,0);
-  circle(xpos,ypos,50);
+  fill(0,0,500);
+circle(xpos,ypos,circlesize);
+
+
+
+if (mouseIsPressed & dist(mouseX, mouseY, width/2, height/2)<250 ){
+function draw(){
+  circle(xpos,ypos,circlesize);
+}
+}
+else{
+
+  }
+
+
 
   xpos = xpos + xballspeed;
   ypos = ypos + yballspeed;
@@ -28,4 +49,5 @@ background(100,0,200);
   if (ypos < 0){
     yballspeed = -yballspeed;
   }
+
 }
