@@ -1,56 +1,41 @@
+let xloc = 100;
+let yloc = 50;
+let xspeed = 10;
+let yspeed = 5;
 
-let xpos = 500;
-let ypos = 0;
-let xballspeed = 5;
-let yballspeed = 10;
-let circlecolor= 120;
-
-let circlesize =10;
-
+let dia = 100;
 
 function setup() {
-  createCanvas(windowWidth,windowHeight);
-circlesize = random(10,100);
+createCanvas(windowWidth,windowHeight);
 
 }
 
 function draw() {
-background(100,0,200);
-  fill(0,0,500);
-circle(xpos,ypos,circlesize);
+background(50,0,150);
 
+fill(200,0,200);
+circle(xloc,yloc,dia);
 
+xloc = xloc + xspeed;
+yloc = yloc + yspeed;
 
-if (mouseIsPressed & dist(mouseX, mouseY,width/2, height/2,)<250 ){
-function draw(){
-xpos=random(100);
-ypos=random(200);
-  circle(xpos,ypos,circlesize);
+if(xloc > width - 50){
+  xspeed = -xspeed;
 }
+if(xloc < 50){
+  xspeed = -xspeed;
 }
-else{
-
+if (yloc > height -50){
+  yspeed = -yspeed;
 }
 
+if (yloc < 50){
+  yspeed = -yspeed;
+}
 
-
-
-  xpos = xpos + xballspeed;
-  ypos = ypos + yballspeed;
-
-//check for x position
-  if(xpos > width){
-    xballspeed = -xballspeed;
-  }
-  if (xpos < 0){
-      xballspeed = -xballspeed;
-  }
-  //check for Y postion
-  if(ypos > height){
-    yballspeed = -yballspeed;
-  }
-  if (ypos < 0){
-    yballspeed = -yballspeed;
-  }
+if (mouseIsPressed & dist(mouseX,mouseY,xloc,yloc) < 100 ){
+xloc = random(0,width);
+yloc = random(0,height);
+}
 
 }
